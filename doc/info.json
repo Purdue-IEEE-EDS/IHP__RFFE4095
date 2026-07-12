@@ -1,0 +1,22 @@
+{
+  "name": "RFFE4095",
+  "design_type": "R",
+  "technology": "IHP",
+  "unique_id": "4095",
+  "license": "Apache-2.0",
+  "trl": 0,
+  "sealring_x": 1.0,
+  "sealring_y": 1.0,
+  "repository": "",
+  "pdk_version": "",
+  "process": "SG13CMOS",
+  "dependencies": {},
+  "tools": {},
+  "top_cell_name": "RFFE4095",
+  "release": {
+    "version": "v.1.0.0",
+    "gds": "release/v.1.0.0/gds",
+    "netlist": "release/v.1.0.0/netlist",
+    "doc": "release/v.1.0.0/doc"
+  }
+}
