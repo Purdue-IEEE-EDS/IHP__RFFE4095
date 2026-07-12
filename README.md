@@ -1,8 +1,7 @@
 # RFFE4095 - 24 GHz Phased Array Radar RX/TX RFFE
 
-24 GHz Phased Array Radar RF Front End module submission for IHP SG13G2 130 nm BiCMOS, July 2026 (IHP__RFFE4095).
+IHP__RFFE4095: 24 GHz Phased Array Radar RF Front End module submission for IHP SG13G2 130 nm BiCMOS, July 2026.
 
-## Overview
 Fully-integrated 22 - 26 GHz FMCW phased-array RX/TX radar front end module on with integrated LNA, PA, phase shifter, up/down conversion mixer, PLL, and VCO.
 
 ![alt text](doc/EDSArchRev1.png)
@@ -30,10 +29,42 @@ Alek Taranov: ataranov@purdue.edu
 
 ---
 
-## Repository Structure
+# Repository
+
+### Structure
 
 ```
 - doc/     : user documentation
 - dependencies/ : sub-cells and blocks
 - release/v.1.0.0 : immutable versioned deliveries
 ```
+
+### Setup
+```
+git clone https://github.com/Purdue-IEEE-EDS/IHP__RFFE4095.git ~/IHP__RFFE4095
+cd ~/IHP__RFFE4095
+```
+
+---
+
+## Building Release
+
+To build a new release, run `./release.sh` with the path to new new GDS:
+```
+cd ~/IHP__RFFE4095
+CONTAINER=3caa74e4d32c ./release.sh /path/to/new.gds
+```
+
+Where `CONTAINER=<container_id_or_name>` is the docker `iic-osic container`:
+```
+$ docker ps
+CONTAINER ID   IMAGE                   COMMAND                  CREATED       STATUS       PORTS                        NAMES
+3caa74e4d32c   hpretl/iic-osic-tools   "/dockerstartup/scri…"   2 weeks ago   Up 2 weeks   80/tcp, 5901/tcp, 8888/tcp   objective_sutherland
+```
+
+This script:
+- Flattens/normalizes the passed GDS
+- Compares a stable geometry fingerprint against current release/gds/RFFE4095.gds
+- If different, creates the next patch release, e.g. release/v.1.0.1/, with:gds/RFFE4095.gds
+- Updates release/gds/RFFE4095.gds
+- If identical, it does not create a new version

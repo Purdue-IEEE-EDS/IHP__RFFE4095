@@ -8,10 +8,10 @@
 - **GDS**: `gds/RFFE4095.gds`
 
 ```
-file: release/gds/RFFE4095_single_top.gds
-bytes: 27292444
-structures: 421
-top cells: ['$$$CONTEXT_INFO$$$', 'RFFE4095']
-RFFE4095 reachable cells: 420
-RFFE4095 direct child refs: 43
+file: release/gds/RFFE4095.gds
+bytes: 48601136
+structures: 1
+top cells: ['RFFE4095']
+RFFE4095 reachable cells: 1
+RFFE4095 direct child refs: 0
 ```
