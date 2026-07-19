@@ -5,9 +5,9 @@
   "unique_id": "4095",
   "license": "Apache-2.0",
   "trl": 0,
-  "sealring_x": 1.0,
-  "sealring_y": 1.0,
-  "repository": "",
+  "sealring_x": 2050.0,
+  "sealring_y": 2550.0,
+  "repository": "https://github.com/Purdue-IEEE-EDS/IHP__RFFE4095.git",
   "pdk_version": "",
   "process": "SG13CMOS",
   "dependencies": {},
@@ -16,7 +16,7 @@
   "release": {
     "version": "v.1.0.0",
     "gds": "release/v.1.0.0/gds",
-    "netlist": "release/v.1.0.0/netlist",
+    "netlist": "",
     "doc": "release/v.1.0.0/doc"
   }
 }
