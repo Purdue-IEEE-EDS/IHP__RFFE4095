@@ -15,3 +15,8 @@ top cells: ['RFFE4095']
 RFFE4095 reachable cells: 1
 RFFE4095 direct child refs: 0
 ```
+
+CONTAINER=f6075bc7f65a ./release.sh /Users/eyn/FinalSubmission_Draft2.gds
+
+
+

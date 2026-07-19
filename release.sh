@@ -405,9 +405,14 @@ if top_cell not in source_tops:
     )
     sys.exit(4)
 
-other_tops = [cell for cell in layout.top_cells() if cell.name != top_cell]
-if other_tops:
-    layout.prune_cells(other_tops, -1)
+other_top_names = [cell.name for cell in layout.top_cells() if cell.name != top_cell]
+for other_top_name in other_top_names:
+    # KLayout exposes the single-cell API as prune_cell(cell_index, levels).
+    # Resolve each cell again because pruning can invalidate previously held
+    # Cell objects and can remove unreferenced descendants along with the top.
+    other_top = layout.cell(other_top_name)
+    if other_top is not None:
+        layout.prune_cell(other_top.cell_index(), -1)
 
 top = layout.cell(top_cell)
 if flatten:
