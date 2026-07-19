@@ -12,4 +12,5 @@ RUN_DRC=0 CONTAINER=f6075bc7f65a ./release.sh /Users/eyn//FinalSubmission_Draft3
 ```
 
 RUN_DRC=0 CONTAINER=f6075bc7f65a ./release.sh /Users/eyn/RFFE4095.gds
+RUN_DRC=1 CONTAINER=f6075bc7f65a ./release.sh "/Users/eyn/RFFE4095 2.gds"
 
